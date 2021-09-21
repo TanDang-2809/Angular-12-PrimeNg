@@ -4,13 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
+import {ButtonModule} from 'primeng/button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+//menubar
+import {MenubarModule} from 'primeng/menubar';//
+import { InputTextModule } from 'primeng/inputtext';
+//SplitterModule
+import {SplitterModule} from 'primeng/splitter';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    MenubarModule,
+    InputTextModule,
+    SplitterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
