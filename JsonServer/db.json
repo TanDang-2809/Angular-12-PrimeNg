@@ -3,10 +3,24 @@
         {
             "id": 1,
             "title": "Notes số 1",
-            "note": "Hôm nay đi chơi trung thu",
+            "note": "Ê thg xớ nớ!!",
             "author": "Tân đặng",
             "authorId": 1
-        }
+        },
+        {
+          "id": 2,
+          "title": "Notes số 2",
+          "note": "Ôi mùa thu!!",
+          "author": "Tân đặng",
+          "authorId": 1
+      },
+      {
+        "id": 3,
+        "title": "Notes số 3",
+        "note": "Ôi tình yêu!!",
+        "author": "Tân đặng",
+        "authorId": 2
+    }
     ],
     "posts": [
       { "id": 1, "title": "json-server", "author": "typicode" }

@@ -18,16 +18,16 @@
   <p-splitter [style]="{'height': '300px'}" styleClass="p-mb-5" [panelSizes]="[20,80]">
       <ng-template pTemplate>
           <div class="p-col p-d-flex p-ai-center p-jc-center">
-              List Menu
-              <li>menu1</li>
-              <li>menu2</li>
-              <li>menu3</li>
-              <li>menu4</li>
+              <li *ngFor="let note of notes" style="cursor: pointer" (click)="editNote(note)">
+                 {{ note.title }}
+              </li>
           </div>
       </ng-template>
       <ng-template pTemplate>
-          <div class="p-col p-d-flex p-ai-center p-jc-center">
-              Panel 2
+          <div class="p-col p-d-flex p-ai-center p-jc-center" *ngIf= "selectedNote">
+              <span style="font-weight: bolder;">{{ selectedNote.title }}</span>
+              <br>
+              {{ selectedNote.note }}
           </div>
       </ng-template>
   </p-splitter>

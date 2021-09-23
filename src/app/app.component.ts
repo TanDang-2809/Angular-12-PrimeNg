@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';//định dạng button thêm màu mè
 import {MenuItem} from 'primeng/api';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,9 @@ import {MenuItem} from 'primeng/api';
 })
 export class AppComponent implements OnInit{
   public items : MenuItem[] = [];
-  constructor(private primengConfig: PrimeNGConfig) {}
+  public notes = null;
+  public selectedNote : any;
+  constructor(private primengConfig: PrimeNGConfig, private dataService: DataService) {}
 
   ngOnInit() {
       this.primengConfig.ripple = true;
@@ -142,7 +145,14 @@ export class AppComponent implements OnInit{
             icon:'pi pi-fw pi-power-off'
         }
     ];
+        this.dataService.getNotes(1).subscribe(data => {
+            this.notes = data;
+        });
+    }
+
+    public editNote(note: any){
+        console.log('edit note', note);
+        this.selectedNote = note;
+    }
 }
-//
-  }
 
