@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
   public selectedNote : any;
   constructor(private primengConfig: PrimeNGConfig, private dataService: DataService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
       this.primengConfig.ripple = true;
     //menubar
       this.items = [
@@ -145,7 +145,7 @@ export class AppComponent implements OnInit{
             icon:'pi pi-fw pi-power-off'
         }
     ];
-        this.dataService.getNotes(1).subscribe(data => {
+        this.dataService.getNotes(1).subscribe((data) => {
             this.notes = data;
         });
     }
