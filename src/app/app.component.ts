@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';//định dạng button thêm màu mè
 import {MenuItem} from 'primeng/api';
 import { DataService } from './data.service';
+import { Note } from './note.model';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ import { DataService } from './data.service';
 })
 export class AppComponent implements OnInit{
   public items : MenuItem[] = [];
-  public notes = null;
-  public selectedNote : any;
+  public notes : Note[] | undefined;//: Note[] | undefined ;//= null;
+  public selectedNote : Note | undefined; //: any;//undefined không định nghĩa, bắt lỗi
+  private authorId = 1;
   constructor(private primengConfig: PrimeNGConfig, private dataService: DataService) {}
 
   ngOnInit() {
@@ -145,12 +147,12 @@ export class AppComponent implements OnInit{
             icon:'pi pi-fw pi-power-off'
         }
     ];
-        this.dataService.getNotes(1).subscribe(data => {
+        this.dataService.getNotes(this.authorId).subscribe((data: Note[])=> {// getNotes(1) 
             this.notes = data;
         });
     }
 
-    public editNote(note: any){
+    public editNote(note: Note){//khi click vào sẽ hiển thị nội dung của cái note đó
         console.log('edit note', note);
         this.selectedNote = note;
     }

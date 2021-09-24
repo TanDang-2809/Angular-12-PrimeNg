@@ -13,6 +13,8 @@ import {MenubarModule} from 'primeng/menubar';//
 import { InputTextModule } from 'primeng/inputtext';
 //SplitterModule
 import {SplitterModule} from 'primeng/splitter';
+//card
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {SplitterModule} from 'primeng/splitter';
     MenubarModule,
     InputTextModule,
     SplitterModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
