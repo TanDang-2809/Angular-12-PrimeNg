@@ -18,7 +18,7 @@ export class DataService {
 
   public getNotes(authorId :  number): Observable<any>{ //Obvervable trả về 
     const url = `${this.REST_API_SERVER}/notes?authorId=` + authorId;// đường dẫn lấy notes
-    // console.log('Cổng 3000 : ',url);//in notes lấy từ đường dẫn url
+    console.log('Cổng 3000 : ',url);//in notes lấy từ đường dẫn url
     return this.httpClient.get<any>(url, this.httpOptions);//gọi lên server và trả về
   }
 }
