@@ -25,6 +25,6 @@ export class DataService {
 
   public postNote(payload :  any): Observable<Note>{ //Obvervable trả về 
     const url = `${this.REST_API_SERVER}/notes`;// đường dẫn lấy notes
-    return this.httpClient.post<Note>(url, payload, this.httpOptions);//gọi lên server và trả về
+    return this.httpClient.post<Note>(url, payload, this.httpOptions);//gọi lên server và trả về//thêm dữ liệu lên server
   }
 }

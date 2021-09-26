@@ -14,9 +14,10 @@ export class AppComponent implements OnInit{
   public notes : Note[] | undefined;//: Note[] | undefined ;//= null;
   public selectedNote : Note | undefined; //: any;//undefined không định nghĩa, bắt lỗi
   private authorId = 1;
+  public newNote : Note | undefined;
   constructor(private primengConfig: PrimeNGConfig, private dataService: DataService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
       this.primengConfig.ripple = true;
     //menubar
       this.items = [
@@ -152,9 +153,27 @@ export class AppComponent implements OnInit{
         });
     }
 
-    public editNote(note: Note){//khi click vào sẽ hiển thị nội dung của cái note đó
-        console.log('edit note', note);
+    public viewNote(note: Note){//khi click vào sẽ hiển thị nội dung của cái note đó
+        console.log('view note', note);
         this.selectedNote = note;
+    }
+
+    public getSelectedClass(note : Note): string{
+        if(!this.selectedNote){// nếu chọn slectedNote mà không có gì thì trả về rỗng
+            return '';// trả về rỗng
+        }
+        return this.selectedNote.id === note.id ? 'selected' : 'nonSelected';
+        //ngược lại nếu có selectedNote.id bằng với note.id thì  selected 'có màu' không thì 'nonSelected' 'không màu'
+    }
+    public addNote(): void{
+        console.log('addNote');
+        this.newNote = {
+            id : 0,
+            title: '',
+            note: '',
+            author: 'Tân Đặng',
+            authorId: this.authorId, 
+        };
     }
 }
 

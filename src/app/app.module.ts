@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 
 import {ButtonModule} from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';// thêm màu mè cho button
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //menubar
 import {MenubarModule} from 'primeng/menubar';//
@@ -15,6 +16,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import {SplitterModule} from 'primeng/splitter';
 //card
 import {CardModule} from 'primeng/card';
+//input text
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import {CardModule} from 'primeng/card';
     InputTextModule,
     SplitterModule,
     HttpClientModule,
-    CardModule
+    CardModule,
+    RippleModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
